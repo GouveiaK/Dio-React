@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import '../src/components/App.css'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [count, setCount] = useState(0);
 
+  return (
+    <div className="app">
+      <h1 className="contador">{count}</h1>
+      <button className="btn-aumentar" onClick={() => {
+        setCount(count + 1);
+        const corCount = parseInt(document.querySelector('.contador').innerHTML);
+        if (corCount == -1) {
+          document.querySelector('.contador').style.color = 'black';
+        } else {
+          document.querySelector('.contador').style.color = 'green';
+        }
+        document.title = 'Aumentando';
+      }}>Aumentar</button>
+      <button className="btn-diminuir" onClick={() =>
+      {
+        setCount(count - 1);
+        const corCount = parseInt(document.querySelector('.contador').innerHTML);
+        if (corCount == 1) {
+          document.querySelector('.contador').style.color = 'black';
+        } else {
+          document.querySelector('.contador').style.color = 'red';
+        }
+        document.title = 'Diminuindo';
+      }}>Diminuir</button>
+    </div>
+  )
+}
 export default App;

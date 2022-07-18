@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.app{
+   text-align: center;
+}
+.contador{
+    font-size: 200px;
+}
+.btn-aumentar, .btn-diminuir{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.btn-aumentar:focus{
+    background-color: green;
+    color: white;
+}
+.btn-aumentar{
+    border: 2px solid green;
+}
+.btn-diminuir{
+    border: 2px solid red;
+}
+.btn-diminuir:focus{
+    background-color: red;
+    color: white;
+}
